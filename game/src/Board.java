@@ -32,10 +32,16 @@ public class Board {
             for (int i = 0; i < 3; i++) {
                 board[row + i][col] = ship;
             }
-
         }
+    }
 
-
+    public void printBoard() {
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                System.out.print(board[i][j] + " ");
+            }
+            System.out.println();  // Salto de línea después de cada fila
+        }
     }
 
 }
