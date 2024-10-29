@@ -21,18 +21,29 @@ public class Board {
     }
 
     public void placeShip(int row, int col, int inclination, String ship) {
-        if (inclination==1){
-            // Llenamos el tablero con los barcos de forma Horizontal
-            for (int i = 0; i < 3; i++) {
-                board[row][col + i] = ship;  // Llenar la fila 0
+
+        while (true){
+            if (inclination==1){
+
+                // Llenamos el tablero con los barcos de forma Horizontal
+                for (int i = 0; i < 3; i++) {
+                    board[row][col + i] = ship;  // Llenar la fila 0
+                }
+
+                break;
+
+            }
+            if (inclination==2){
+                // Llenamos el tablero con los barcos de forma vertical
+                for (int i = 0; i < 3; i++) {
+                    board[row + i][col] = ship;
+                }
+
+                break;
+
             }
         }
-        if (inclination==2){
-            // Llenamos el tablero con los barcos de forma vertical
-            for (int i = 0; i < 3; i++) {
-                board[row + i][col] = ship;
-            }
-        }
+
     }
 
     public void printBoard() {

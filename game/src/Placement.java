@@ -1,7 +1,9 @@
 import java.util.Scanner;
+import battleship.user.validation.ShipPlacementValidator;
 
 public class Placement {
     private Board board;
+        ShipPlacementValidator shipPlacementValidator = new ShipPlacementValidator();
 
     public Placement(Board board) {
         this.board = board;
@@ -9,14 +11,14 @@ public class Placement {
 
     public void placeShips(){
         Scanner input = new Scanner(System.in);
-        System.out.println("JUGADOR 1\n Digite el numero de la fila y la comuna de la posicion inicial del barco");
+        System.out.println("JUGADOR 1\nDigite el numero de la fila y la comuna de la posicion inicial del barco");
         board.printBoard();
 
-        System.out.println("Ingrese el numero de la fila");
-        int fila1 = input.nextInt();
+        // the input of the row
+        int fila1 = shipPlacementValidator.getRow();
 
-        System.out.println("Ingrese el numero de la columna");
-        int column1 = input.nextInt();
+        // the input of the column
+        int column1 = shipPlacementValidator.getColumn();
 
         System.out.println("Ingrese 1 si desea el barco de forma horizontal\nIngrese 2 si desea el barco de forma vertical");
         int inclination1 = input.nextInt();
